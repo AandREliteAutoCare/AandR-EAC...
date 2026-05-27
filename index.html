@@ -1,0 +1,488 @@
+<!-- Save this file as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A&R Elite Auto Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f8fb;
+      color: #1b1b1b;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    header {
+      height: 100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero {
+      color: white;
+      max-width: 750px;
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      color: #f0f0f0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00aaff;
+      color: white;
+      padding: 15px 34px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0089cc;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h3 {
+      font-size: 2.7rem;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .service-box {
+      background: white;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-box h4 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #00aaff;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .price-card {
+      background: white;
+      padding: 45px 35px;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .featured {
+      border: 3px solid #00aaff;
+      transform: scale(1.03);
+    }
+
+    .tag {
+      position: absolute;
+      top: -14px;
+      right: 25px;
+      background: #00aaff;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .price-card h4 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 3.5rem;
+      color: #00aaff;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .price-card li {
+      margin: 14px 0;
+      color: #555;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .about-text h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .stat-box h4 {
+      font-size: 2.2rem;
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .stat-box p {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .contact {
+      background: #0e1726;
+      color: white;
+      text-align: center;
+      border-radius: 30px;
+      padding: 70px 20px;
+    }
+
+    .contact h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      margin: 12px 0;
+      color: #d5d5d5;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #08101c;
+      color: #9aa5b1;
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        padding: 18px 5%;
+      }
+
+      nav div {
+        display: none;
+      }
+
+      .hero h2 {
+        font-size: 2.7rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>A&R Elite</h1>
+
+    <div>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <h2>Premium Car Wash Service At Affordable Prices</h2>
+
+      <p>
+        Professional interior and exterior cleaning with affordable pricing for cars, SUVs, and trucks. Run by kids with a passion for clean cars.
+      </p>
+
+      <a href="#pricing" class="btn">See Pricing</a>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="section-title">
+      <h3>Our Services</h3>
+      <p>Professional cleaning packages for every vehicle.</p>
+    </div>
+
+    <div class="services">
+
+      <div class="service-box">
+        <h4>Exterior Wash</h4>
+        <p>
+          Foam wash, rinse, tire clean, and hand dry.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h4>Interior Cleaning</h4>
+        <p>
+          Vacuuming, dashboard wipe-down, and interior windows.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h4>Interior + Exterior Package</h4>
+        <p>
+          Complete inside and outside cleaning package with vacuuming, wash, and dry.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-title">
+      <h3>Simple Pricing</h3>
+      <p>Affordable packages with no hidden fees.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card featured">
+        <div class="tag">Popular</div>
+
+        <h4>Normal Wash + Dry</h4>
+        <div class="price">$20<span>/car</span></div>
+
+        <ul>
+          <li>✔ Exterior Foam Wash</li>
+          <li>✔ Spot-Free Rinse</li>
+          <li>✔ Tire Cleaning</li>
+          <li>✔ Hand Dry Finish</li>
+        </ul>
+
+        <a href="#contact" class="btn">Book Now</a>
+      </div>
+
+      <div class="price-card">
+
+        <h4>Interior Cleaning</h4>
+        <div class="price">$20<span>/car</span></div>
+
+        <ul>
+          <li>✔ Full Vacuum</li>
+          <li>✔ Dashboard Wipe</li>
+          <li>✔ Interior Window Cleaning</li>
+          <li>✔ Door Panel Cleaning</li>
+        </ul>
+
+        <a href="#contact" class="btn">Book Now</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="tag">Best Value</div>
+
+        <h4>Interior + Exterior Package</h4>
+        <div class="price">$35<span>/car</span></div>
+
+        <ul>
+          <li>✔ Complete Exterior Wash</li>
+          <li>✔ Full Interior Cleaning</li>
+          <li>✔ Vacuum Service</li>
+          <li>✔ Hand Dry Finish</li>
+          <li>✔ Best Overall Value</li>
+        </ul>
+
+        <a href="#contact" class="btn">Book Now</a>
+      </div>
+
+      <div class="price-card">
+        <h4>SUVs & Trucks</h4>
+        <div class="price">+$5<span> extra</span></div>
+        <p style="color:#777; margin-bottom:20px;">Applies To All Packages</p>
+
+        <ul>
+          <li>✔ Larger Vehicle Coverage</li>
+          <li>✔ Extra Cleaning Time Included</li>
+          <li>✔ Oversized Tire Cleaning</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <h4>Add-On Services</h4>
+        <div class="price">From $5</div>
+        <p style="color:#777; margin-bottom:20px;">Applies To All Packages</p>
+
+        <ul>
+          <li>✔ Tire Shine — $5</li>
+          <li>✔ Deep Rim Cleaning — $5</li>
+          <li>✔ Floor Mat Cleaning — $5</li>
+        </ul>
+      </div>
+
+      
+  </section>
+  <section>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80" alt="Car wash service">
+
+      <div class="about-text">
+        <h3>Why Drivers Choose Us</h3>
+
+        <p>
+          A&R Elite Auto Care delivers high-quality car cleaning with dependable service and professional results.
+        </p>
+
+        <p>
+          We take pride in making every vehicle look clean, refreshed, and well cared for.
+        </p>
+
+        <p>
+          Whether you need a wash or full detailing, we provide reliable service at prices that make sense.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h3>Call, Text, or Email Us</h3>
+      <p>📍 1 Tanglewood Trail, Markham, Ontario</p>
+      <p>📞 (647)-510-8988</p>
+      <p>✉️ aarizhooda742@icloud.com</p>
+    </div>
+  </section>
+
+  
+
+</body>
+</html>
